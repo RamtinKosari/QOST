@@ -92,6 +92,47 @@
                  * @param type
                  */
                 Processor processor;
+                /**
+                 * @brief Structure to Store Graphic Card's Data
+                 * @param isSwitchable AMD to Intel or Vice Versa
+                 * @param capacity Capacity of Graphic Card
+                 * @param brand Brand of Graphic Card
+                 * @param model Model of Graphic Card
+                 * @param type Type of Graphic Card
+                 */
+                struct Graphic {
+                    /**
+                     * @brief Amd to Intel or Vice Versa
+                     * @note Yes or No
+                     */
+                    bool isSwitchable;
+                    /**
+                     * @brief Capacity of Graphic Card
+                     * @note Unit : Giga Byte
+                     */
+                    unsigned int capacity;
+                    /**
+                     * @brief Brand of Graphic Card
+                     */
+                    std::string brand;
+                    /**
+                     * @brief Model of Graphic Card
+                     */
+                    std::string model;
+                    /**
+                     * @brief Type of Graphic Card
+                     */
+                    std::string type;
+                };
+                /**
+                 * @brief Object to Access Graphic Card's Data
+                 * @param isSwitchable AMD to Intel or Vice Versa
+                 * @param capacity Capacity of Graphic Card
+                 * @param brand Brand of Graphic Card
+                 * @param model Model of Graphic Card
+                 * @param type Type of Graphic Card
+                 */
+                Graphic graphic;
             };
             /**
              * @brief Object to Access Hardware's Info
