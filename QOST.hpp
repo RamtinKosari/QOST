@@ -133,6 +133,49 @@
                  * @param type Type of Graphic Card
                  */
                 Graphic graphic;
+                /**
+                 * @brief Structure to Store Display Monitor's Data
+                 * @param resolution Resolution of Display Monitor
+                 * @param height Height of Display Monitor
+                 * @param width Width of Display Monitor
+                 * @param size Size of Display Monitor
+                 * @param rate Refresh Rate of Display Monitor
+                 */
+                struct DisplayMonitor {
+                    /**
+                     * @brief Resolution of Display Monitor
+                     */
+                    std::string resolution;
+                    /**
+                     * @brief Height of Screen
+                     * @note Unit : Pixels
+                     */
+                    unsigned int height;
+                    /**
+                     * @brief Width of Screen
+                     * @note Unit : Pixels
+                     */
+                    unsigned int width;
+                    /**
+                     * @brief Size of Display Monitor
+                     * @note Unit : Inch
+                     */
+                    unsigned int size;
+                    /**
+                     * @brief Refresh Rate of Display Monitor
+                     * @note Unit : Hertz
+                     */
+                    unsigned int rate;
+                };
+                /**
+                 * @brief Object to Access Display Monitor's Data
+                 * @param resolution Resolution of Display Monitor
+                 * @param height Height of Display Monitor
+                 * @param width Width of Display Monitor
+                 * @param size Size of Display Monitor
+                 * @param rate Refresh Rate of Display Monitor
+                 */
+                DisplayMonitor monitor; 
             };
             /**
              * @brief Object to Access Hardware's Info
