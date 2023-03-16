@@ -259,8 +259,16 @@
             /**
              * @brief Object to Access Data
              * @note to Get Data, Use Get Methodes
+             * @param hardware Hardware Data
+             * @param software Software Data
+             * @param client Client Data
              */
             Data data;
+            /**
+             * @brief Object to Access Methodes
+             * @param getData(Option) Get Data Optional
+             */
+            Methodes method;
         public:
     };
 

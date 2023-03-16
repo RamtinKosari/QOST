@@ -50,6 +50,9 @@
         # include "Configs.hpp"
     # endif // __QOST_CONFIGS
     //-- Includes Definitions Header
+    # ifndef __QOST_DEFINITIONS
+        # include "Definitions.hpp"
+    # endif // __QOST_DEFINITIONS
     //-- Include Needed Libraries
     # include <iostream>
     # include <vector>
