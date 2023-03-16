@@ -51,6 +51,47 @@
                  * @param model Model of System
                  */
                 Manufacture manufacture;
+                /**
+                 * @brief Structure to Store Processor's Info
+                 * @param capacity Capacity of Processor
+                 * @param brand Brand of Processor
+                 * @param model Model of Processor
+                 * @param speed Speed of Processor
+                 * @param type Type of Processor
+                 */
+                struct Processor {
+                    /**
+                     * @brief Capacity of Processor
+                     * @note Unit : Giga Byte
+                     */
+                    unsigned int capacity;
+                    /**
+                     * @brief Brand of Processor
+                     */
+                    std::string brand;
+                    /**
+                     * @brief Model of Processor
+                     */
+                    std::string model;
+                    /**
+                     * @brief Type of Processor
+                     */
+                    std::string type;
+                    /**
+                     * @brief Speed of Processor
+                     * @note Unit : Mega Hertz
+                     */
+                    double speed;
+                };
+                /**
+                 * @brief Object to Access Processor's Info
+                 * @param capacity
+                 * @param brand
+                 * @param model
+                 * @param speed
+                 * @param type
+                 */
+                Processor processor;
             };
             /**
              * @brief Object to Access Hardware's Info
