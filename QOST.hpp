@@ -219,21 +219,42 @@
         public:
     };
     /**
+     * @brief Class of Methodes
+     */
+    class Methodes {
+        public:
+            /**
+             * @brief Get System Data
+             * @param option Option of Get Data Method
+             * @return true 
+             * @return false 
+             */
+            bool getData(int &option) noexcept;
+    };
+    /**
      * @brief Class for Start Up Tools
      */
-    class StartUp : public Data {
+    class StartUp : public Data, public Methodes {
         private:
             /**
              * @brief Object to Access Data
              * @note to Get Data, Use Get Methodes
+             * @param hardware Hardware Data
+             * @param software Software Data
+             * @param client Client Data
              */
             Data data;
+            /**
+             * @brief Object to Access Methodes
+             * @param getData(Option) Get Data Optional
+             */
+            Methodes method;
         public:
     };
     /**
      * @brief Class for Shut Down Tools
      */
-    class ShutDown : public Data {
+    class ShutDown : public Data, public Methodes {
         private:
             /**
              * @brief Object to Access Data
