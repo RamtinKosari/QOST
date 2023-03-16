@@ -45,10 +45,11 @@
         // # include <opencv4/opencv2/highgui.hpp>
         // # include <opencv4/opencv2/imgproc.hpp>
     # endif // Check OpenCV
-    //-- Include Configs Header File
+    //-- Include Configs Header
     # ifndef __QOST_CONFIGS
         # include "Configs.hpp"
     # endif // __QOST_CONFIGS
+    //-- Includes Definitions Header
     //-- Include Needed Libraries
     # include <iostream>
     # include <vector>
