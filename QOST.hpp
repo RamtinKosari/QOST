@@ -24,7 +24,33 @@
              * @param Disk Disk Info
              */
             struct Hardware {
-                
+                /**
+                 * @brief Structure to Store Manufacture's Info
+                 * @param serial Serial Number of System
+                 * @param brand Brand of System
+                 * @param model Model of System
+                 */
+                struct Manufacture {
+                    /**
+                     * @brief Serial Number of System
+                     */
+                    std::string serial;
+                    /**
+                     * @brief Brand Name of System
+                     */
+                    std::string brand;
+                    /**
+                     * @brief Model Name ID of System
+                     */
+                    std::string model;
+                };
+                /**
+                 * @brief Object to Access Manufacture's Info
+                 * @param serial Serial Number of System
+                 * @param brand Brand of System
+                 * @param model Model of System
+                 */
+                Manufacture manufacture;
             };
             /**
              * @brief Object to Access Hardware's Info
