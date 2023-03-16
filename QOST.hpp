@@ -175,7 +175,36 @@
                  * @param size Size of Display Monitor
                  * @param rate Refresh Rate of Display Monitor
                  */
-                DisplayMonitor monitor; 
+                DisplayMonitor monitor;
+                /**
+                 * @brief Structure to Store Storage Data
+                 * @param capacity Capacity of System Storage
+                 * @param type Type of System Storage
+                 * @param fs File System Partition of System Storage
+                 */
+                struct Storage {
+                    /**
+                     * @brief Capacity of System Storage
+                     * @note Unit : Giga Byte
+                     */
+                    unsigned int capacity;
+                    /**
+                     * @brief Type of System Storage
+                     * @note SSD or HDD
+                     */
+                    std::string type;
+                    /**
+                     * @brief File System Partition of System Storage
+                     */
+                    std::string fs;
+                };
+                /**
+                 * @brief Object to Access Storage Data
+                 * @param capacity Capacity of System Storage
+                 * @param type Type of System Storage
+                 * @param fs File System Partition of System Storage
+                 */
+                Storage storage;
             };
             /**
              * @brief Object to Access Hardware's Info
