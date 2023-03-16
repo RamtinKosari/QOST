@@ -2,7 +2,7 @@
     /**
      * @file Core.hpp
      * @author Ramtin Kosari(ramtinkosari&gmail.com)
-     * @brief Q Operating System Tools's Core Header
+     * @brief Q Operating System Tools's Core Macro
      * @version 0.1
      * @date 2023-03-16
      */
@@ -42,10 +42,13 @@
     # endif // Check Operating System
     //-- Check and Include OpenCV
     # ifndef OPENCV_HIGHGUI_HPP
-        # include <opencv4/opencv2/highgui.hpp>
-        # include <opencv4/opencv2/imgproc.hpp>
+        // # include <opencv4/opencv2/highgui.hpp>
+        // # include <opencv4/opencv2/imgproc.hpp>
     # endif // Check OpenCV
     //-- Include Configs Header File
+    # ifndef __QOST_CONFIGS
+        # include "Configs.hpp"
+    # endif // __QOST_CONFIGS
     //-- Include Needed Libraries
     # include <iostream>
     # include <vector>
