@@ -53,6 +53,7 @@
                 Manufacture manufacture;
                 /**
                  * @brief Structure to Store Processor's Info
+                 * @param architecture Architecture of Processor
                  * @param capacity Capacity of Processor
                  * @param brand Brand of Processor
                  * @param model Model of Processor
@@ -60,6 +61,10 @@
                  * @param type Type of Processor
                  */
                 struct Processor {
+                    /**
+                     * @brief Architecture of Processor
+                     */
+                    std::string architecture;
                     /**
                      * @brief Capacity of Processor
                      * @note Unit : Giga Byte
@@ -85,11 +90,12 @@
                 };
                 /**
                  * @brief Object to Access Processor's Info
-                 * @param capacity
-                 * @param brand
-                 * @param model
-                 * @param speed
-                 * @param type
+                 * @param architecture Architecture of Processor
+                 * @param capacity Capacity of Processor
+                 * @param brand Brand of Processor
+                 * @param model Model of Processor
+                 * @param speed Speed of Processor
+                 * @param type Type of Processor
                  */
                 Processor processor;
                 /**
@@ -222,14 +228,35 @@
      * @brief Class of Methodes
      */
     class Methodes {
+        private:
+            /**
+             * @brief All Accessed Data Stores in This Attribute
+             */
+            std::ofstream data;
         public:
+            /**
+             * @brief Destructor
+             */
+            ~Methodes();
+            /**
+             * @brief Create Data File
+             * @return true 
+             * @return false 
+             */
+            bool createDataFile() noexcept;
+            /**
+             * @brief Check Data File
+             * @return true 
+             * @return false 
+             */
+            bool checkDataFile() noexcept;
             /**
              * @brief Get System Data
              * @param option Option of Get Data Method
              * @return true 
              * @return false 
              */
-            bool getData(int &option) noexcept;
+            bool getData(const int &option) noexcept;
     };
     /**
      * @brief Class for Start Up Tools
@@ -250,6 +277,10 @@
              */
             Methodes method;
         public:
+            /**
+             * @brief Constructor
+             */
+            StartUp();
     };
     /**
      * @brief Class for Shut Down Tools

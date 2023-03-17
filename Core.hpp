@@ -53,8 +53,20 @@
     # ifndef __QOST_DEFINITIONS
         # include "Definitions.hpp"
     # endif // __QOST_DEFINITIONS
+    /**
+     * @note Unix Based OS is Supported
+     */
+    # define SUPPORT_UNIX true
+    /**
+     * @note Windows OS is Not Supported Yet
+     * 
+     */
+    # define SUPPORT_WIN false
+    
     //-- Include Needed Libraries
     # include <iostream>
-    # include <vector>
+    # include <dirent.h>
+    # include <fstream>
     # include <string>
+    # include <vector>
 # endif // __QOST_CORE
