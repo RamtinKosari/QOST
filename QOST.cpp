@@ -3,6 +3,19 @@
     /**
      * @brief Constructor
      */
+    Data::Data() {
+        baseboard.device.resize(0);
+        driver.keyboard.resize(0);
+        driver.monitor.resize(0);
+        driver.network.resize(0);
+        driver.mouse.resize(0);
+        driver.sound.resize(0);
+        partition.resize(0);
+        graphics.resize(0);
+    }
+    /**
+     * @brief Constructor
+     */
     StartUp::StartUp() {
         method.getData(Options::ALL);
     }
@@ -83,7 +96,7 @@
  * 
  * 
  *                            Create system() methodes to get data form os
- *                          
+ *                            Add method to check commands first
  * 
  * 
  */

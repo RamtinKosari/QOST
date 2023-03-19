@@ -11,218 +11,149 @@
     # include "Core.hpp"
     /**
      * @brief Class to Store System Data
+     * @param
      */
     class Data {
         private:
             /**
-             * @brief Structure to Store Hardware's Info
-             * @param Manufacture Manufacture Info
-             * @param Processor Processor Info
-             * @param Graphic Graphics Info
-             * @param Display Display Info
-             * @param Battery Battery Info
-             * @param Disk Disk Info
+             * @brief Structure to Store Chassis Data of Machine
+             * @param manufacturer Machine Manufacturer
+             * @param version Machine Version
+             * @param serial Machine Serial Number
+             * @param state Object to Access Machine's Powe Supply, Boot Up and Thermal State
+             * @param type Product Type
              */
-            struct Hardware {
-                /**
-                 * @brief Structure to Store Manufacture's Info
-                 * @param serial Serial Number of System
-                 * @param brand Brand of System
-                 * @param model Model of System
-                 */
-                struct Manufacture {
-                    /**
-                     * @brief Serial Number of System
-                     */
-                    std::string serial;
-                    /**
-                     * @brief Brand Name of System
-                     */
-                    std::string brand;
-                    /**
-                     * @brief Model Name ID of System
-                     */
-                    std::string model;
+            struct Chassis {
+                std::string manufacturer;
+                std::string version;
+                std::string serial;
+                std::string type;
+                struct State {
+                    bool power_supply;
+                    bool boot_up;
+                    bool thermal;
                 };
-                /**
-                 * @brief Object to Access Manufacture's Info
-                 * @param serial Serial Number of System
-                 * @param brand Brand of System
-                 * @param model Model of System
-                 */
-                Manufacture manufacture;
-                /**
-                 * @brief Structure to Store Processor's Info
-                 * @param architecture Architecture of Processor
-                 * @param capacity Capacity of Processor
-                 * @param brand Brand of Processor
-                 * @param model Model of Processor
-                 * @param speed Speed of Processor
-                 * @param type Type of Processor
-                 */
-                struct Processor {
-                    /**
-                     * @brief Architecture of Processor
-                     */
-                    std::string architecture;
-                    /**
-                     * @brief Capacity of Processor
-                     * @note Unit : Giga Byte
-                     */
-                    unsigned int capacity;
-                    /**
-                     * @brief Brand of Processor
-                     */
-                    std::string brand;
-                    /**
-                     * @brief Model of Processor
-                     */
-                    std::string model;
-                    /**
-                     * @brief Type of Processor
-                     */
-                    std::string type;
-                    /**
-                     * @brief Speed of Processor
-                     * @note Unit : Mega Hertz
-                     */
-                    double speed;
-                };
-                /**
-                 * @brief Object to Access Processor's Info
-                 * @param architecture Architecture of Processor
-                 * @param capacity Capacity of Processor
-                 * @param brand Brand of Processor
-                 * @param model Model of Processor
-                 * @param speed Speed of Processor
-                 * @param type Type of Processor
-                 */
-                Processor processor;
-                /**
-                 * @brief Structure to Store Graphic Card's Data
-                 * @param isSwitchable AMD to Intel or Vice Versa
-                 * @param capacity Capacity of Graphic Card
-                 * @param brand Brand of Graphic Card
-                 * @param model Model of Graphic Card
-                 * @param type Type of Graphic Card
-                 */
-                struct Graphic {
-                    /**
-                     * @brief Amd to Intel or Vice Versa
-                     * @note Yes or No
-                     */
-                    bool isSwitchable;
-                    /**
-                     * @brief Capacity of Graphic Card
-                     * @note Unit : Giga Byte
-                     */
-                    unsigned int capacity;
-                    /**
-                     * @brief Brand of Graphic Card
-                     */
-                    std::string brand;
-                    /**
-                     * @brief Model of Graphic Card
-                     */
-                    std::string model;
-                    /**
-                     * @brief Type of Graphic Card
-                     */
-                    std::string type;
-                };
-                /**
-                 * @brief Object to Access Graphic Card's Data
-                 * @param isSwitchable AMD to Intel or Vice Versa
-                 * @param capacity Capacity of Graphic Card
-                 * @param brand Brand of Graphic Card
-                 * @param model Model of Graphic Card
-                 * @param type Type of Graphic Card
-                 */
-                Graphic graphic;
-                /**
-                 * @brief Structure to Store Display Monitor's Data
-                 * @param resolution Resolution of Display Monitor
-                 * @param height Height of Display Monitor
-                 * @param width Width of Display Monitor
-                 * @param size Size of Display Monitor
-                 * @param rate Refresh Rate of Display Monitor
-                 */
-                struct DisplayMonitor {
-                    /**
-                     * @brief Resolution of Display Monitor
-                     */
-                    std::string resolution;
-                    /**
-                     * @brief Height of Screen
-                     * @note Unit : Pixels
-                     */
-                    unsigned int height;
-                    /**
-                     * @brief Width of Screen
-                     * @note Unit : Pixels
-                     */
-                    unsigned int width;
-                    /**
-                     * @brief Size of Display Monitor
-                     * @note Unit : Inch
-                     */
-                    unsigned int size;
-                    /**
-                     * @brief Refresh Rate of Display Monitor
-                     * @note Unit : Hertz
-                     */
-                    unsigned int rate;
-                };
-                /**
-                 * @brief Object to Access Display Monitor's Data
-                 * @param resolution Resolution of Display Monitor
-                 * @param height Height of Display Monitor
-                 * @param width Width of Display Monitor
-                 * @param size Size of Display Monitor
-                 * @param rate Refresh Rate of Display Monitor
-                 */
-                DisplayMonitor monitor;
-                /**
-                 * @brief Structure to Store Storage Data
-                 * @param capacity Capacity of System Storage
-                 * @param type Type of System Storage
-                 * @param fs File System Partition of System Storage
-                 */
-                struct Storage {
-                    /**
-                     * @brief Capacity of System Storage
-                     * @note Unit : Giga Byte
-                     */
-                    unsigned int capacity;
-                    /**
-                     * @brief Type of System Storage
-                     * @note SSD or HDD
-                     */
-                    std::string type;
-                    /**
-                     * @brief File System Partition of System Storage
-                     */
-                    std::string fs;
-                };
-                /**
-                 * @brief Object to Access Storage Data
-                 * @param capacity Capacity of System Storage
-                 * @param type Type of System Storage
-                 * @param fs File System Partition of System Storage
-                 */
-                Storage storage;
+                State state;
             };
-            /**
-             * @brief Object to Access Hardware's Info
-             * @param manufacture Manufacture Info
-             * @param processor Processor Info
-             * @param graphic Graphics Info
-             * @param display Display Info
-             * @param battery Battery Info
-             * @param disk Disk Info
-             */
-            Hardware hardware;
+            Chassis chassis;
+            struct Bios {
+                std::string version;
+                std::string vendor;
+                int rom_size;
+            };
+            Bios bios;
+            struct System {
+                std::string manufacturer;
+                std::string product_name;
+                std::string family;
+                std::string serial;
+                std::string UUID;
+            };
+            System system;
+            struct BaseBoard {
+                std::string manufacturer;
+                std::string product_name;
+                std::string version;
+                std::string serial;
+                std::string type;
+                struct BoardDevices {
+                    std::string designation;
+                    std::string type;
+                    bool status;
+                };
+                std::vector<BoardDevices> device;
+            };
+            BaseBoard baseboard;
+            struct Processor {
+                std::string manufacturer;
+                std::string family;
+                std::string type;
+                std::string id;
+                double voltage;
+                int max_speed;
+                int speed;
+            };
+            Processor processor;
+            struct Memory {
+                int amount_of_devices;
+                std::string location;
+                struct Device {
+                    int size;
+                    std::string manufacturer;
+                    std::string bank_locator;
+                    std::string form_factor;
+                    std::string type_detail;
+                    std::string locator;
+                    std::string type;
+                    double voltage;
+                    int speed;
+                };
+                Device device;
+            };
+            Memory memory;
+            struct DiskStorage {
+                std::string mount_point;
+                std::string type;
+                double avalible;
+                double used;
+                double size;
+                bool main;
+            };
+            std::vector<DiskStorage> partition;
+            struct GraphicsCard {
+                std::string product_name;
+                std::string vendor;
+            };
+            std::vector<GraphicsCard> graphics;
+            struct Additional {
+                struct Keyboard {
+                    std::string name;
+                    bool status;
+                };
+                std::vector<Keyboard> keyboard;
+                struct Mouse {
+                    std::string name;
+                    bool status;
+                };
+                std::vector<Mouse> mouse;
+                struct Monitor {
+                    std::string name;
+                    bool status;
+                };
+                std::vector<Monitor> monitor;
+                struct Sound {
+                    std::string name;
+                    bool status;
+                };
+                std::vector<Sound> sound;
+                struct Network {
+                    std::string name;
+                    bool status;
+                };
+                std::vector<Network> network;
+            };
+            Additional driver;
+            struct Services {
+                std::string name;
+                bool status;
+            };
+            std::vector<Services> service;
+            struct Network {
+                std::string connection_name;
+                std::string connection_UUID;
+                std::string interface;
+                std::string ipv4;
+                std::string ipv6;
+                std::string type;
+                double ping;
+                bool state;
+            };
+            std::vector<Network> network;
         public:
+            /**
+             * @brief Constructor
+             */
+            Data();
     };
     /**
      * @brief Class of Methodes
@@ -257,6 +188,17 @@
              * @return false 
              */
             bool getData(const int &option) noexcept;
+            struct Get {
+                struct Cpu {
+                    std::string architecture() noexcept;
+                    int amount() noexcept;
+                    std::string model() noexcept;
+                    std::string brand() noexcept;
+                    double speed() noexcept;
+                };
+                Cpu cpu;
+            };
+            Get get;
     };
     /**
      * @brief Class for Start Up Tools
