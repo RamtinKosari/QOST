@@ -46,4 +46,10 @@
             WIN
         };
     }
+    # define enabled true
+    # define disabled false
+    # define safe true
+    # define unsafe false
+    # define connected true
+    # define disconnected false
 # endif // __QOST_DEFINITIONS
